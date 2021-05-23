@@ -50,6 +50,10 @@ namespace Cr_figure
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_circle = new System.Windows.Forms.Button();
+            this.btn_line = new System.Windows.Forms.Button();
+            this.btn_triangle = new System.Windows.Forms.Button();
+            this.btn_rectangle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_color.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -64,6 +68,7 @@ namespace Cr_figure
             this.pictureBox1.Size = new System.Drawing.Size(800, 450);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseClick);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
@@ -259,10 +264,15 @@ namespace Cr_figure
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(146, 56);
             this.trackBar1.TabIndex = 0;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             this.trackBar1.ValueChanged += new System.EventHandler(this.trackBar1_ValueChanged);
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_rectangle);
+            this.panel3.Controls.Add(this.btn_triangle);
+            this.panel3.Controls.Add(this.btn_line);
+            this.panel3.Controls.Add(this.btn_circle);
             this.panel3.Controls.Add(this.pnl_color);
             this.panel3.Controls.Add(this.btn_clear);
             this.panel3.Controls.Add(this.btn_Save);
@@ -272,6 +282,50 @@ namespace Cr_figure
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(146, 450);
             this.panel3.TabIndex = 6;
+            // 
+            // btn_circle
+            // 
+            this.btn_circle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_circle.Location = new System.Drawing.Point(0, 192);
+            this.btn_circle.Name = "btn_circle";
+            this.btn_circle.Size = new System.Drawing.Size(146, 41);
+            this.btn_circle.TabIndex = 4;
+            this.btn_circle.Text = "circle";
+            this.btn_circle.UseVisualStyleBackColor = true;
+            this.btn_circle.Click += new System.EventHandler(this.btn_point_Click);
+            this.btn_circle.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_circle_MouseClick);
+            // 
+            // btn_line
+            // 
+            this.btn_line.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_line.Location = new System.Drawing.Point(0, 233);
+            this.btn_line.Name = "btn_line";
+            this.btn_line.Size = new System.Drawing.Size(146, 40);
+            this.btn_line.TabIndex = 5;
+            this.btn_line.Text = "line";
+            this.btn_line.UseVisualStyleBackColor = true;
+            this.btn_line.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // btn_triangle
+            // 
+            this.btn_triangle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_triangle.Location = new System.Drawing.Point(0, 273);
+            this.btn_triangle.Name = "btn_triangle";
+            this.btn_triangle.Size = new System.Drawing.Size(146, 38);
+            this.btn_triangle.TabIndex = 6;
+            this.btn_triangle.Text = "triangle";
+            this.btn_triangle.UseVisualStyleBackColor = true;
+            this.btn_triangle.Click += new System.EventHandler(this.btn_triangle_Click);
+            // 
+            // btn_rectangle
+            // 
+            this.btn_rectangle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_rectangle.Location = new System.Drawing.Point(0, 311);
+            this.btn_rectangle.Name = "btn_rectangle";
+            this.btn_rectangle.Size = new System.Drawing.Size(146, 39);
+            this.btn_rectangle.TabIndex = 7;
+            this.btn_rectangle.Text = "rectangle";
+            this.btn_rectangle.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -314,6 +368,10 @@ namespace Cr_figure
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btn_rectangle;
+        private System.Windows.Forms.Button btn_triangle;
+        private System.Windows.Forms.Button btn_line;
+        private System.Windows.Forms.Button btn_circle;
     }
 }
 

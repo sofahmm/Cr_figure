@@ -88,6 +88,7 @@ namespace Cr_figure
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             isMouse = true;
+            
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -151,6 +152,50 @@ namespace Cr_figure
                     pictureBox1.Image.Save(saveFileDialog1.FileName);
                 }
             }
+        }
+
+        private void btn_point_Click(object sender, EventArgs e)
+        {
+            //var paper = pictureBox1.CreateGraphics();
+            //paper.DrawEllipse(pen, e., e.Y, 100, 100);
+        }
+
+        private void btn_triangle_Click(object sender, EventArgs e)
+        {
+            
+            var paper = pictureBox1.CreateGraphics();
+            var pen = new Pen(Color.Black, trackBar1.Value);
+            paper.DrawLine(pen, 60, 60, 180, 500);
+            paper.DrawLine(pen, 180, 500, 390, 510);
+            paper.DrawLine(pen, 390, 510, 60, 60);
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            btn_line.Show(); 
+            var paper = pictureBox1.CreateGraphics();
+            //var pen = new Pen(Color.Red, 50);
+            //paper.DrawLine(pen, 60, 60, 80, 100);
+
+            paper.DrawLine(pen, 10, 15, 50, 20);
+        }
+
+        private void btn_circle_MouseClick(object sender, MouseEventArgs e)
+        {
+            var paper = pictureBox1.CreateGraphics();
+            paper.DrawEllipse(pen, e.X, e.Y, 100, 100);
+        }
+
+        private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
+        {
+           // var paper = pictureBox1.CreateGraphics();
+           // paper.DrawEllipse(pen, e.X, e.Y, 100, 100);
+           // paper.DrawLine(pen, e.X, e.Y, 50, 20);
         }
     }
 }
